@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Program za racunanje</title>
+</head>
+
+<body>
+    <div>
+        <p>Digitron<p>
+                <p>Broj:</p>
+                <input type="text" id="br1" name="broj1">
+                <p>Operacija:</p>
+                <input type="text" id="operator" name="operacija">
+                <p>Broj:</p>
+                <input type="text" id="br2" name="broj2"><br>
+                <button onclick="startFun()">Rezultat</button><br>
+                <input type="number" id="rez" name="rezultatfin"><br><br>
+    </div>
+    <script>
+        var num1;
+        var num2;
+        var rezultat;
+        var operacija;
+
+        function startFun(num1, num2) {
+            let pb1 = document.getElementById('br1').value;
+            let pb2 = document.getElementById('br2').value;
+            var num1 = Number(pb1);
+            var num2 = Number(pb2);
+            startRac(num1, num2, operacija, rezultat);
+        }
+
+        function startRac(num1, num2, operacija, rezultat) {
+            var operacija = document.getElementById('operator').value;
+            if (operacija == '+') {
+                var rezultat = num1 + num2;
+                ispisiRez(rezultat);
+            } else if (operacija == '-') {
+                var rezultat = num1 - num2;
+                ispisiRez(rezultat);
+            } else if (operacija == '*') {
+                var rezultat = num1 * num2;
+                ispisiRez(rezultat);
+            } else if (operacija == '/') {
+                var rezultat = num1 / num2;
+                ispisiRez(rezultat);
+            } else {
+                console.log("x");
+            }
+        }
+
+        function ispisiRez(rezultat) {
+            document.getElementById('rez').value = rezultat;
+        }
+
+
+    </script>
+</body>
+
+</html>
